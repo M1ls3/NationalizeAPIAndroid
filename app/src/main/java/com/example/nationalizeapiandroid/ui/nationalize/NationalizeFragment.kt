@@ -1,4 +1,4 @@
-package com.example.nationalizeapiandroid.ui.home
+package com.example.nationalizeapiandroid.ui.nationalize
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.nationalizeapiandroid.databinding.FragmentHomeBinding
+import com.example.nationalizeapiandroid.databinding.FragmentNationalizeBinding
 
-class HomeFragment : Fragment() {
-// TODO: Get response from API and save it in DB
-    private var _binding: FragmentHomeBinding? = null
+class NationalizeFragment : Fragment() {
+// TODO: show DB and develop Edit and Delete options
+    private var _binding: FragmentNationalizeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,17 +22,16 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val nationalizeViewModel =
+            ViewModelProvider(this).get(NationalizeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+       _binding = FragmentNationalizeBinding.inflate(inflater, container, false)
+       val root: View = binding.root
 
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }

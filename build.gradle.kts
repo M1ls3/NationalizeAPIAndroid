@@ -2,12 +2,4 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-
-//    id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
-//    id("com.google.devtools.ksp")
-//
-//    kotlin("kapt") version "2.0.21"
-//
-//    id("kotlin-android")
-//    id("kotlin-kapt") // Додаємо цей плагін для використання kapt
 }

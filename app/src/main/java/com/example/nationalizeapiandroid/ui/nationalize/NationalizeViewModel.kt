@@ -1,9 +1,9 @@
-package com.example.nationalizeapiandroid.ui.home
+package com.example.nationalizeapiandroid.ui.nationalize
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class NationalizeViewModel : ViewModel() {
 
 }

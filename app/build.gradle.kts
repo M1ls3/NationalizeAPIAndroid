@@ -2,19 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp") version "1.9.20-1.0.14"
-//    id("com.android.library") version "8.1.1" apply false
-//    id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
 }
 
-//plugins {
-//    id("com.google.dagger.hilt.android")
-//    id("kotlin-kapt")
-//}
-
 android {
     namespace = "com.example.nationalizeapiandroid"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.nationalizeapiandroid"
@@ -62,42 +55,33 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Retrofit and GSON dependencies
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
 
 // Navigation Component
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.2.2")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.2.2")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.4")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.8.4")
 
     // Room components
-    implementation ("androidx.room:room-runtime:2.2.5")
-//    implementation(libs.androidx.room.runtime)
-//    annotationProcessor(libs.androidx.room.compiler)
-//    ksp(libs.androidx.room.compiler)
-//    implementation (libs.kotlin.scripting.compiler.embeddable)
-//    implementation(libs.androidx.room.ktx)
-    kapt ("androidx.room:room-compiler:2.2.5")
+    implementation ("androidx.room:room-runtime:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
 
-//    implementation ("androidx.room:room-ktx:2.2.5")
-    implementation ("androidx.room:room-ktx:2.4.1")
-    androidTestImplementation ("androidx.room:room-testing:2.2.5")
+    implementation ("androidx.room:room-ktx:2.6.1")
+    androidTestImplementation ("androidx.room:room-testing:2.6.1")
 
     // Lifecycle components
     implementation ("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation ("androidx.lifecycle:lifecycle-common-java8:2.2.0")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation ("androidx.lifecycle:lifecycle-common-java8:2.8.7")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
 
     // Kotlin components
-    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
-    api ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
-    api ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5")
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.0.21")
+    api ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    api ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 
     // Якщо використовуєте Kotlin Coroutines:
-
-
-    implementation("androidx.recyclerview:recyclerview:1.2.1")
-
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
 }

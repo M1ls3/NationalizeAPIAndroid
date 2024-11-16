@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "NationalizeAPI Android"
+rootProject.name = "NationalizeAPIAndroid"
 include(":app")
  
