@@ -8,7 +8,7 @@ import com.example.nationalizeapiandroid.R
 class NationalizeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val nameTextView: TextView = itemView.findViewById(R.id.nameTextView)
     val countTextView: TextView = itemView.findViewById(R.id.countTextView)
-    val countryTextView: TextView = itemView.findViewById(R.id.countryTextView)
+    val countryTextView: TextView = itemView.findViewById(R.id.countryInfoTextView)
     val editButton: View = itemView.findViewById(R.id.buttonEdit)
     val deleteButton: View = itemView.findViewById(R.id.buttonDelete)
 }

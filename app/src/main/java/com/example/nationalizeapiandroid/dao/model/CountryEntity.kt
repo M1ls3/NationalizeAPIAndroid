@@ -5,7 +5,7 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "CountryInfo",
+    tableName = "country",
     foreignKeys = [ForeignKey(
         entity = NationalizeEntity::class,
         parentColumns = ["id"],

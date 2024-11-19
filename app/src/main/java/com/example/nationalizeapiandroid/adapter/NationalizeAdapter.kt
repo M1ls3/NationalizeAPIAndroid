@@ -5,15 +5,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nationalizeapiandroid.R
 import com.example.nationalizeapiandroid.dao.model.NationalizeEntity
-import com.example.nationalizeapiandroid.dao.model.NationalizeInterface
 import com.example.nationalizeapiandroid.data.NationalizeWithCountries
 import com.example.nationalizeapiandroid.viewholder.NationalizeViewHolder
 
 
 class NationalizeAdapter(
     private var items: List<NationalizeWithCountries>,
-    private val onEditClick: (NationalizeEntity) -> Unit,
-    private val onDeleteClick: (NationalizeEntity) -> Unit
+    private val onEditClick: (NationalizeWithCountries) -> Unit,
+    private val onDeleteClick: (NationalizeWithCountries) -> Unit
 ) : RecyclerView.Adapter<NationalizeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NationalizeViewHolder {
@@ -37,11 +36,11 @@ class NationalizeAdapter(
 
         // Логіка для кнопок редагування та видалення
         holder.editButton.setOnClickListener {
-            onEditClick(item.nationalize)
+            onEditClick(item)
         }
 
         holder.deleteButton.setOnClickListener {
-            onDeleteClick(item.nationalize)
+            onDeleteClick(item)
         }
     }
 
@@ -53,3 +52,4 @@ class NationalizeAdapter(
         notifyDataSetChanged()
     }
 }
+
