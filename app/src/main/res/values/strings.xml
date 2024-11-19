@@ -9,4 +9,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_nationalize">NationalizeDB</string>
+
+    <string name="home_button">EXECUTE</string>
+    <string name="home_textInput">Name</string>
 </resources>
