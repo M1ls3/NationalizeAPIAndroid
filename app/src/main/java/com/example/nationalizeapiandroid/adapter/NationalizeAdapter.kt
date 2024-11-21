@@ -1,6 +1,7 @@
 package com.example.nationalizeapiandroid.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nationalizeapiandroid.R
@@ -11,6 +12,7 @@ import com.example.nationalizeapiandroid.viewholder.NationalizeViewHolder
 
 class NationalizeAdapter(
     private var items: List<NationalizeWithCountries>,
+    private val showButtons: Boolean = true,
     private val onEditClick: (NationalizeWithCountries) -> Unit,
     private val onDeleteClick: (NationalizeWithCountries) -> Unit
 ) : RecyclerView.Adapter<NationalizeViewHolder>() {
@@ -34,13 +36,16 @@ class NationalizeAdapter(
         }
         holder.countryTextView.text = countryInfo
 
-        // Логіка для кнопок редагування та видалення
-        holder.editButton.setOnClickListener {
-            onEditClick(item)
-        }
+        // Відображаємо кнопки лише якщо showButtons = true
+        if (showButtons) {
+            holder.editButton.visibility = View.VISIBLE
+            holder.deleteButton.visibility = View.VISIBLE
 
-        holder.deleteButton.setOnClickListener {
-            onDeleteClick(item)
+            holder.editButton.setOnClickListener { onEditClick(item) }
+            holder.deleteButton.setOnClickListener { onDeleteClick(item) }
+        } else {
+            holder.editButton.visibility = View.GONE
+            holder.deleteButton.visibility = View.GONE
         }
     }
 

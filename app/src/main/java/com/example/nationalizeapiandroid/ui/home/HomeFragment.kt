@@ -34,12 +34,13 @@ class HomeFragment : Fragment() {
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        // Ініціалізація адаптера
         adapter = NationalizeAdapter(
             items = emptyList(),
-            onEditClick = {}, // Не потрібні кнопки у HomeFragment
+            showButtons = false,
+            onEditClick = {}, // Не потрібні
             onDeleteClick = {}
         )
+
         recyclerView.adapter = adapter
 
         // Спостереження за LiveData
