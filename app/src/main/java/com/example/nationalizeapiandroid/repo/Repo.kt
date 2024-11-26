@@ -8,11 +8,18 @@ import com.example.nationalizeapiandroid.data.NationalizeWithCountries
 class Repo(private val dao: Dao) {
 
     // Вставка нової націоналізації разом із країнами
-    suspend fun insertNationalizeWithCountries(
-        nationalize: NationalizeEntity,
-        countries: List<CountryEntity>
-    ) {
-        dao.insertNationalize(nationalize)
+//    suspend fun insertNationalizeWithCountries(
+//        nationalize: NationalizeEntity,
+//        countries: List<CountryEntity>
+//    ) {
+//        dao.insertNationalize(nationalize)
+//        dao.insertCountries(countries)
+//    }
+
+    suspend fun insertNationalize(nationalize: NationalizeEntity) {
+        dao.insertNationalize(nationalize) }
+
+    suspend fun insertCountries(countries: List<CountryEntity>) {
         dao.insertCountries(countries)
     }
 

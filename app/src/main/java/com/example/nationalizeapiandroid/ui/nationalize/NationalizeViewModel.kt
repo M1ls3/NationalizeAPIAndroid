@@ -41,17 +41,17 @@ class NationalizeViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    // Додавання нової націоналізації з країнами
-    fun addNationalize(nationalize: NationalizeEntity, countries: List<CountryEntity>) {
-        viewModelScope.launch {
-            try {
-                repository.insertNationalizeWithCountries(nationalize, countries)
-                loadItems() // Оновлюємо список після додавання
-            } catch (e: Exception) {
-                _errorMessage.postValue("Error adding data: ${e.message}")
-            }
-        }
-    }
+//    // Додавання нової націоналізації з країнами
+//    fun addNationalize(nationalize: NationalizeEntity, countries: List<CountryEntity>) {
+//        viewModelScope.launch {
+//            try {
+//                repository.insertNationalizeWithCountries(nationalize, countries)
+//                loadItems() // Оновлюємо список після додавання
+//            } catch (e: Exception) {
+//                _errorMessage.postValue("Error adding data: ${e.message}")
+//            }
+//        }
+//    }
 
     // Оновлення націоналізації та країн
     fun updateNationalize(nationalize: NationalizeEntity, countries: List<CountryEntity>) {
@@ -124,10 +124,10 @@ class NationalizeViewModel(application: Application) : AndroidViewModel(applicat
                     CountryEntity(nationalize_id = 3, country_id = "IT", probability = 0.05)
                 )
 
-                // Додавання до бази даних через репозиторій
-                repository.insertNationalizeWithCountries(nationalize1, countries1)
-                repository.insertNationalizeWithCountries(nationalize2, countries2)
-                repository.insertNationalizeWithCountries(nationalize3, countries3)
+//                // Додавання до бази даних через репозиторій
+//                repository.insertNationalizeWithCountries(nationalize1, countries1)
+//                repository.insertNationalizeWithCountries(nationalize2, countries2)
+//                repository.insertNationalizeWithCountries(nationalize3, countries3)
 
                 // Оновлення списку після додавання даних
                 loadItems()

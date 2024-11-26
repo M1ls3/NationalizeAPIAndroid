@@ -45,7 +45,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     // Якщо не знайдено, викликаємо fetch та save
                     val apiResult = fetchNationalizeData(name)
                     apiResult?.let {
-                        saveNationalizeData(it)
                         _result.postValue(it)
                     } ?: run {
                         _errorMessage.postValue("No data found for name: $name")
@@ -70,13 +69,19 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                         name = nationalize.name,
                         count = nationalize.count
                     )
+
+                    saveNationalizeData(nationalizeEntity)
+                    val cachedResult = repository.getNationalizeWithCountriesByName(nationalizeEntity.name)
+
                     val countryEntities = nationalize.country.map { country ->
                         CountryEntity(
-                            nationalize_id = nationalizeEntity.id,
+                            nationalize_id = cachedResult!!.nationalize.id,
                             country_id = country.country_id,
                             probability = country.probability
                         )
                     }
+                    saveCountriesData(countryEntities)
+
                     NationalizeWithCountries(nationalizeEntity, countryEntities)
                 } else {
                     null
@@ -90,11 +95,20 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
 
     // Метод для збереження даних в базу
-    private suspend fun saveNationalizeData(data: NationalizeWithCountries) {
+    private suspend fun saveNationalizeData(data: NationalizeEntity) {
         try {
-            repository.insertNationalizeWithCountries(data.nationalize, data.countries)
+            repository.insertNationalize(nationalize = data)
         } catch (e: Exception) {
-            _errorMessage.postValue("Error saving data: ${e.message}")
+            _errorMessage.postValue("Error saving Nationalize: ${e.message}")
+        }
+    }
+
+    // Метод для збереження даних в базу
+    private suspend fun saveCountriesData(data: List<CountryEntity>) {
+        try {
+            repository.insertCountries(countries = data)
+        } catch (e: Exception) {
+            _errorMessage.postValue("Error saving Countries: ${e.message}")
         }
     }
 }
