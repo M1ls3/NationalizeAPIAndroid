@@ -1,14 +1,9 @@
 package com.example.nationalizeapiandroid.dao
 import androidx.room.Dao
-//import androidx.room.Insert
-//import androidx.room.OnConflictStrategy
-//import androidx.room.Query
 import androidx.room.*
 import com.example.nationalizeapiandroid.dao.model.CountryEntity
 import com.example.nationalizeapiandroid.dao.model.NationalizeEntity
 import com.example.nationalizeapiandroid.data.NationalizeWithCountries
-
-import androidx.room.*
 
 @Dao
 interface Dao {

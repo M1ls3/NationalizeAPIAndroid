@@ -54,8 +54,6 @@ class NationalizeFragment : Fragment() {
 
         recyclerView.adapter = adapter
 
-        // viewModel.simpleData()
-
         // Спостерігаємо за змінами в LiveData з ViewModel
         viewModel.nationalizeItems.observe(viewLifecycleOwner, { items ->
             adapter.updateData(items)

@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         adapter = NationalizeAdapter(
             items = emptyList(),
             showButtons = false,
-            onEditClick = {}, // Не потрібні
+            onEditClick = {},
             onDeleteClick = {}
         )
 

@@ -93,7 +93,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-
     // Метод для збереження даних в базу
     private suspend fun saveNationalizeData(data: NationalizeEntity) {
         try {
