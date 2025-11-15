@@ -52,15 +52,15 @@ class NationalizeViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    // Видалення націоналізації
-    fun deleteNationalize(nationalize: NationalizeEntity) {
-        viewModelScope.launch {
-            try {
-                repository.deleteNationalize(nationalize)
-                loadItems() // Оновлюємо список після видалення
-            } catch (e: Exception) {
-                _errorMessage.postValue("Error deleting data: ${e.message}")
+        // Видалення націоналізації
+        fun deleteNationalize(nationalize: NationalizeEntity) {
+            viewModelScope.launch {
+                try {
+                    repository.deleteNationalize(nationalize)
+                    loadItems() // Оновлюємо список після видалення
+                } catch (e: Exception) {
+                    _errorMessage.postValue("Error deleting data: ${e.message}")
+                }
             }
         }
-    }
 }
